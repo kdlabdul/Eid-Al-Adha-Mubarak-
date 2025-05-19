@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid al-Adha Mubarak! 🐑✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Poppins:wght@400;500;700&family=Lobster&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0; /* Adjusted padding for ads */
+            font-family: 'Poppins', 'Noto Sans Devanagari', 'Noto Nastaliq Urdu', sans-serif;
+            background-image: linear-gradient(135deg, #778899 0%, #B0C4DE 30%, #87CEEB 70%, #4682B4 100%);
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* This might need adjustment if ads affect vertical centering of main content */
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .ad-container {
+            width: 100%;
+            text-align: center;
+            margin: 10px 0; /* Spacing for ads */
+            /* The ad script will create an iframe of 468x60, this div is just a wrapper */
+        }
+        .ad-container-top {
+            padding-top: 10px; /* Extra space at the very top */
+             position: relative; /* Ensure it's part of the flow */
+             z-index: 100; /* Make sure ads are on top if overlaps occur */
+        }
+        .ad-container-bottom {
+            padding-bottom: 10px; /* Extra space at the very bottom */
+             position: relative;
+             z-index: 100;
+        }
+
+
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: fall linear infinite;
+            box-shadow: 0 0 5px rgba(255, 255, 224, 0.7), 0 0 10px rgba(255, 255, 224, 0.5);
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh);
+                opacity: 0;
+            }
+        }
+        
+        .moon-container {
+            position: absolute;
+            top: 5%;
+            right: 10%;
+            font-size: 5em;
+            color: #FFFACD;
+            text-shadow: 0 0 15px #FFFACD, 0 0 30px #F0E68C;
+            animation: gentleSway 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes gentleSway {
+            0%, 100% { transform: rotate(-5deg) translateX(0px); }
+            50% { transform: rotate(5deg) translateX(-10px); }
+        }
+
+        .content-wrapper { /* New wrapper for main content to manage spacing with ads */
+            padding: 20px 0; /* Original body padding moved here */
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), 0 0 0 10px rgba(255,255,255,0.15);
+            border: 10px solid;
+            border-image-slice: 1;
+            border-width: 10px;
+            border-image-source: linear-gradient(to right, #2E8B57, #FFD700, #2E8B57);
+            max-width: 650px;
+            width: 90%;
+            animation: subtlePulse 7s infinite alternate;
+            position: relative;
+            z-index: 5;
+            /* margin-top: 50px; Removed, handled by content-wrapper or ad spacing */
+        }
+
+        @keyframes subtlePulse {
+            0% { transform: scale(1); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), 0 0 0 10px rgba(255,255,255,0.15); }
+            50% { transform: scale(1.015); box-shadow: 0 15px 50px rgba(46, 139, 87, 0.45), 0 0 0 12px rgba(255,215,0,0.2); }
+            100% { transform: scale(1); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), 0 0 0 10px rgba(255,255,255,0.15); }
+        }
+        
+        .assalamualaikum-box {
+            max-width: 90%;
+            margin: 20px auto 25px auto;
+            padding: 15px;
+            border-radius: 15px;
+            border: 4px solid #FFBF00;
+            box-shadow: 0 6px 20px rgba(255, 191, 0, 0.3);
+            background-color: rgba(255, 253, 245, 0.85);
+            text-align: center;
+        }
+
+        .assalamualaikum-box p {
+            font-weight: bold;
+            color: #006400;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .assalamualaikum-box .assalam-english {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4em;
+        }
+
+        .assalamualaikum-box .assalam-urdu {
+            font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', 'Jameel Noori Nastaleeq', serif;
+            direction: rtl;
+            font-size: 1.9em;
+        }
+
+        .assalamualaikum-box .assalam-hindi {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            font-size: 1.5em;
+        }
+
+
+        h1 {
+            font-family: 'Lobster', 'Poppins', 'Noto Sans Devanagari', 'Noto Nastaliq Urdu', cursive;
+            font-size: 2.7em;
+            margin-bottom: 15px;
+            color: #004d00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2), 0 0 15px #fff;
+            animation: headingGlow 3s infinite alternate;
+        }
+        
+        @keyframes headingGlow {
+            from { text-shadow: 1px 1px 3px rgba(0,0,0,0.1), 0 0 10px #fff, 0 0 10px #c1ffc1; }
+            to { text-shadow: 2px 2px 5px rgba(0,0,0,0.2), 0 0 20px #fff, 0 0 20px #a2ffa2, 0 0 30px #50c878; }
+        }
+
+        .greeting {
+            font-size: 1.35em;
+            margin: 18px 0;
+            line-height: 1.7;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .greeting.english, .greeting.hindi, .greeting.urdu { font-weight: bold; }
+
+        .urdu {
+            font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', 'Jameel Noori Nastaleeq', serif;
+            direction: rtl;
+            font-size: 1.7em;
+        }
+
+        .hindi {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            font-size: 1.5em;
+        }
+        
+        .wisher-info {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: rgba(220, 235, 255, 0.8);
+            border-radius: 10px;
+            font-size: 1.15em;
+            font-weight: bold;
+            border: 1px solid rgba(70, 130, 180, 0.3);
+        }
+
+        .wisher-name {
+            font-size: 1.4em;
+            font-family: 'Lobster', cursive;
+            display: inline-block;
+            padding: 5px 10px;
+            background-image: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.1));
+            animation: nameShine 2.5s infinite alternate;
+        }
+
+        @keyframes nameShine {
+          0% { filter: drop-shadow(1px 1px 2px rgba(255,223,186,0.3)) brightness(1.1); }
+          50% { filter: drop-shadow(2px 2px 4px rgba(255,218,185,0.5)) brightness(1.2); }
+          100% { filter: drop-shadow(1px 1px 2px rgba(255,223,186,0.3)) brightness(1.1); }
+        }
+        
+        .top-whatsapp-button {
+            margin-bottom: 25px;
+        }
+
+        .create-share-section {
+            margin-top: 35px;
+            padding: 25px;
+            background-color: rgba(230, 245, 230, 0.85);
+            border-radius: 15px;
+            border: 2px dashed #3CB371;
+        }
+
+        .create-share-section label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #00552e;
+        }
+
+        .create-share-section input[type="text"] {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 2px solid #3CB371;
+            width: calc(100% - 34px); 
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .create-share-section input[type="text"]:focus {
+            border-color: #FFBF00;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255,191,0,0.6);
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background-image: linear-gradient(to right, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.25em;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-button:hover {
+            background-image: linear-gradient(to right, #1EBE58 0%, #075E54 100%);
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 7px 18px rgba(0,0,0,0.3);
+        }
+        .whatsapp-button:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .whatsapp-button img {
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 28px;
+            height: 28px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ======== TOP AD SCRIPT ======== -->
+    <div class="ad-container ad-container-top">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '463459e8181a0e203d9603d3328b3a13',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/463459e8181a0e203d9603d3328b3a13/invoke.js"></script>
+    </div>
+    <!-- ======== END TOP AD SCRIPT ======== -->
+
+    <div class="animated-bg">
+        <div class="moon-container">🌙</div>
+    </div>
+
+    <div class="content-wrapper"> <!-- Wrapper for main content -->
+        <div class="container">
+            <h1>🌙✨ Eid al-Adha Mubarak! ✨🐑</h1>
+
+            <div class="assalamualaikum-box">
+                <p class="assalam-urdu">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللَّٰهِ وَبَرَكَاتُهُ</p>
+                <p class="assalam-hindi">अस्सलामु अलैकुम व रहमतुल्लाहि व बरकातुहु</p>
+                <p class="assalam-english">Assalamualaikum Warahmatullahi Wabarakatuh</p>
+            </div>
+            
+            <p class="greeting english">
+                Wishing you and your family a joyful and blessed Eid al-Adha! May Allah accept your sacrifices and grant your prayers.
+            </p>
+            <p class="greeting hindi">
+                आपको और आपके परिवार को ईद अल-अधा की दिली मुबारकबाद! अल्लाह आपकी कुर्बानियों को कबूल करे और आपकी दुआओं को पूरा करे।
+            </p>
+            <p class="greeting urdu">
+                آپ کو اور آپ کے اہل خانہ کو عید الاضحیٰ دلی مبارک ہو! اللہ آپ کی قربانیوں کو قبول فرمائے اور آپ کی دعاؤں کو شرف قبولیت بخشے۔
+            </p>
+
+            <div class="wisher-info" id="wisherInfoSection" style="display: none;">
+                <p>یہ عیدی/یہ مبارکباد آپ کو بھیجی ہے:</p>
+                <p>यह मुबारकबाद आपको भेजी है:</p>
+                <p>This greeting is sent to you by:</p>
+                <p><strong id="wisherNameDisplay" class="wisher-name"></strong></p>
+            </div>
+
+            <a href="#" id="topWhatsAppShareLink" class="whatsapp-button top-whatsapp-button" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon">
+                Share Wishes
+            </a>
+            
+            <div class="create-share-section">
+                <label for="senderNameInput">اپنی مبارکباد بھیجنے کے لیے اپنا نام لکھیں / अपना शुभकामना संदेश भेजने के लिए अपना नाम लिखें / Enter your name to send your wish:</label>
+                <input type="text" id="senderNameInput" placeholder="یہاں اپنا نام لکھیں / यहां अपना नाम लिखें / Enter your name here">
+                <button id="createAndShareWhatsAppButton" class="whatsapp-button">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png" alt="WhatsApp Icon">
+                    Create & Share My Wish
+                </button>
+            </div>
+        </div> <!-- End .container -->
+    </div> <!-- End .content-wrapper -->
+
+
+    <!-- ======== BOTTOM AD SCRIPT ======== -->
+    <div class="ad-container ad-container-bottom">
+        <script type="text/javascript">
+            atOptions = {
+                'key' : '463459e8181a0e203d9603d3328b3a13',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/463459e8181a0e203d9603d3328b3a13/invoke.js"></script>
+    </div>
+    <!-- ======== END BOTTOM AD SCRIPT ======== -->
+
+    <script>
+        const animatedBg = document.querySelector('.animated-bg');
+        const numStars = 50;
+
+        for (let i = 0; i < numStars; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = `${Math.random() * 3 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * -100 - 5}vh`;
+            star.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            animatedBg.appendChild(star);
+        }
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const wisherNameFromUrl = getQueryParam('name');
+        const wisherNameDisplay = document.getElementById('wisherNameDisplay');
+        const wisherInfoSection = document.getElementById('wisherInfoSection');
+        const topWhatsAppShareLink = document.getElementById('topWhatsAppShareLink');
+        const pageUrlBase = window.location.href.split('?')[0];
+
+        let currentWisherNameForShare = "Aapke Ek Dost / आपके एक दोस्त / آپ کے ایک دوست";
+        let topShareLinkHref = pageUrlBase;
+        let topShareMessage = `🐑✨ Eid al-Adha Mubarak! ✨🌙\n\nAap bhi apni Eid ki wishes yahan se bana kar bhej sakte hain:\n${pageUrlBase}\n\nBest wishes from the creators of this page!`;
+
+        if (wisherNameFromUrl) {
+            const decodedWisherName = decodeURIComponent(wisherNameFromUrl.replace(/\+/g, ' '));
+            wisherNameDisplay.textContent = decodedWisherName;
+            wisherInfoSection.style.display = 'block';
+            currentWisherNameForShare = decodedWisherName;
+            
+            topShareLinkHref = `${pageUrlBase}?name=${encodeURIComponent(decodedWisherName)}`;
+            topShareMessage = `🐑✨ Eid al-Adha Mubarak! ✨🌙\n\nYeh Eidi dekhein jo mujhe mili hai:\n${topShareLinkHref}\n\nFrom: ${decodedWisherName}`;
+            topWhatsAppShareLink.querySelector('img').nextSibling.nodeValue = " Forward This Wish";
+
+        } else {
+            wisherInfoSection.style.display = 'none';
+        }
+        
+        topWhatsAppShareLink.href = `whatsapp://send?text=${encodeURIComponent(topShareMessage)}`;
+
+        const senderNameInput = document.getElementById('senderNameInput');
+        const createAndShareWhatsAppButton = document.getElementById('createAndShareWhatsAppButton');
+
+        createAndShareWhatsAppButton.addEventListener('click', function() {
+            const senderName = senderNameInput.value.trim();
+            if (senderName === "") {
+                alert("Please enter your name! / براہ کرم اپنا نام درج کریں! / कृपया अपना नाम दर्ज करें!");
+                senderNameInput.focus();
+                return;
+            }
+
+            const newSharableLink = `${pageUrlBase}?name=${encodeURIComponent(senderName)}`;
+            
+            const wishMessageForNewShare = `🐑✨ Eid al-Adha Mubarak! ✨🌙\n\nMeri taraf se aapko aur aapke parivar ko Eid ki bahut bahut Mubarakbad! Yeh Eidi dekhein:\n${newSharableLink}\n\nFrom: ${senderName}`;
+            
+            window.open(`whatsapp://send?text=${encodeURIComponent(wishMessageForNewShare)}`, '_blank');
+        });
+
+    </script>
+</body>
+</html>
